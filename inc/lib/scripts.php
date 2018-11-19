@@ -90,6 +90,9 @@ if ( ! function_exists( 'codexin_framework_scripts' ) ) {
 		// Superfish Menu
 		wp_enqueue_script( 'jquery-superfish', trailingslashit( get_template_directory_uri() ) . 'assets/js/superfish.min.js', array ( 'jquery' ), 1.7, true);
 
+		// Headroom Menu
+		wp_enqueue_script( 'headroom-js', trailingslashit( get_template_directory_uri() ) . 'assets/js/headroom.min.js', array ( 'jquery' ), 0.9, true);
+
 		// Swiper Slider
 		if( ! wp_script_is( 'swiper', 'enqueued' ) ) {
 			wp_enqueue_script( 'swiper', trailingslashit( get_template_directory_uri() ) . 'assets/js/swiper.min.js', array ( 'jquery' ), 4.4, true);

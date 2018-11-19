@@ -2,7 +2,6 @@ html,
 body {
 	margin: 0;
 	padding: 0;
-	height: 100%;
 	@include box-sizing(border-box);
 }
 
@@ -23,9 +22,7 @@ section {
 }
 
 .lead {
-	font-size: 16px;
-	line-height: 1.65;
-	margin-bottom: 20px;
+	font-size: 19px;
 }
 
 .main-content-wrapper {
@@ -44,16 +41,31 @@ section {
 	@extend %overflow-hidden;
 }
 
-.pswp {
-	z-index: 9999;
-}
-
-.pswp__counter {
-	@extend %visuallyhidden;
+.pswp button:hover {
+	background-color: inherit;
 }
 
 .pswp__caption__center {
 	text-align: center;
+	i,
+	p {
+		display: none;
+	}
+
+	.primary-title {
+		display: inline-block;
+		text-align: center;
+		text-transform: capitalize;
+		margin: 0;
+		padding: 0;
+	    font-size: 1em;
+	    font-weight: normal;
+
+		a {
+			@extend %color-white;
+
+		}
+	}
 }
 
 /* Modal Fixes */

@@ -72,7 +72,7 @@ $pagination 		= codexin_get_option( 'cx_blog_pagination' );
 					}
 					?>
 				</main> <!-- end of #primary -->
-			</div>
+			</div> <!-- end of col -->
 
             <?php 
             // Checking the need of sidebar
@@ -91,7 +91,7 @@ $pagination 		= codexin_get_option( 'cx_blog_pagination' );
 						get_sidebar();
 						?>
 					</aside> <!-- end of #secondary -->
-				</div>
+				</div> <!-- end of col -->
 			<?php } // end of sidebar condition check ?>
 		</div>
 	</div> <!-- end of container -->

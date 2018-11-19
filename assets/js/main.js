@@ -30,6 +30,7 @@ INDEX:
   var $window = $(window),
       $document = $(document),
       $mainMenu = $(".sf-menu"),
+      $pageloader = $(".cx-pageloader"),
       $headerfl = $(".floating-header"),
       $pSlider = $("#primary_slider"),
       $elCarousel = $(".element-carousel"),
@@ -40,6 +41,14 @@ INDEX:
 
   $.fn.elExists = function () {
     return this.length > 0;
+  };
+  /************************************************************
+      s01 - Preloader
+  *************************************************************/
+
+
+  CODEXIN.preloader = function () {
+    $pageloader.delay(300).fadeOut('fast');
   };
   /************************************************************
       s01 - Main Navigation Menu
@@ -114,6 +123,27 @@ INDEX:
       s04 - Primary Slider Settings
   *************************************************************/
 
+  /************************************************************
+      s09 - Headroom Js for Auto Hide the header on scroll
+  *************************************************************/
+
+
+  CODEXIN.headerAutoHide = function () {
+    var navContainer = document.querySelector(".intelligent-header"); // construct an instance of Headroom, passing the element
+
+    var headroom = new Headroom(navContainer); // initialise
+
+    headroom.init();
+    $window.on('scroll', function () {
+      var height = $window.scrollTop();
+
+      if (height < 200) {
+        $intelHeader.removeClass('scrolling-up');
+      } else {
+        $intelHeader.addClass('scrolling-up');
+      }
+    });
+  };
   /************************************************************
       s05 - Elements Spacing & Classes
   *************************************************************/
@@ -303,12 +333,12 @@ INDEX:
 
 
   $window.on('load', function () {
-    CODEXIN.interactiveBehaviour();
+    CODEXIN.preloader(), CODEXIN.interactiveBehaviour();
     CODEXIN.imageBgSettings();
   }); // Document ready functions
 
   $document.on('ready', function () {
-    CODEXIN.mainNav(), CODEXIN.mobileNav(), CODEXIN.elementsCarousel(), CODEXIN.testimonialCarousel(), CODEXIN.scrollToTop(), CODEXIN.toolTips();
+    CODEXIN.mainNav(), CODEXIN.mobileNav(), CODEXIN.elementsCarousel(), CODEXIN.testimonialCarousel(), CODEXIN.scrollToTop(), CODEXIN.headerAutoHide(), CODEXIN.toolTips();
   }); // Window load and resize functions
 
   $window.on('load resize', function () {

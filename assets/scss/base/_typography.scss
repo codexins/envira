@@ -1,6 +1,9 @@
 html,
 body {
     font-size: $cx-body-font-size;
+    @include respond-to(mobile) {
+        font-size: 14px;
+    }
 }
 
 body {
@@ -12,33 +15,27 @@ body {
 }
 
 h1 { 
-    font-size: $cx-h1-font-size;
+    font-size: 2*$cx-body-font-size;
 }
-
 h2 { 
-    font-size: $cx-h2-font-size;
+    font-size: 1.75*$cx-body-font-size;
 }
-
 h3 { 
-    font-size: $cx-h3-font-size;
+    font-size: 1.5*$cx-body-font-size;
 }
-
 h4 { 
-    font-size: $cx-h4-font-size; 
+    font-size: 1.3125*$cx-body-font-size; 
 }
-
 h5 { 
-    font-size: $cx-h5-font-size; 
+    font-size: 1.125*$cx-body-font-size; 
 }
-
 h6 { 
-    font-size: $cx-h6-font-size; 
+    font-size: 1*$cx-body-font-size; 
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: $cx-body-font;
-    font-weight: 500;
-    @extend %color-secondary;
+    font-weight: 700;
     @extend %default-heading;    
 }
 
@@ -92,7 +89,6 @@ a:hover, a:focus {
 a:focus, a:active, a:hover {
     outline: 0 none;
     text-decoration: none;
-    // @include cx-color(primary, color);
     @extend %color-primary;
 }
 
@@ -101,7 +97,6 @@ a:focus, a:active, a:hover {
     &:hover,
     &:focus,
     &:active {
-        // @include cx-color(primary, color);
         @extend %color-primary;
     }
 }
@@ -127,18 +122,11 @@ input[type="reset"],
 input[type="password"],
 input[type="search"],
 input[type="tel"] {
-    font-size: 12px;
-    box-shadow: none;
-    border-radius: 0;
-    height: 40px;
-    border-color: #ddd;
-    @extend %cx-transition;
-
-    &:focus {
-        box-shadow: none;
-        // @include cx-color(primary, border);
-        @extend %border-primary;
-    }
+    padding:8px 10px;
+    border:1px solid darken($cx-border-color, 10%);
+    margin-bottom: 15px;
+    min-height: 40px;
+    @include border-radius(0);
 }
 
 .form-control {
@@ -151,7 +139,7 @@ input[type="tel"] {
 }
 
 textarea {
-    min-height: 100px;
+    min-height: 160px;
 }
 
 .input-group,
@@ -160,43 +148,41 @@ textarea {
 .input-group 
 .dropdown-menu, 
 .input-group .popover {
-    font-size: 12px;
+    font-size: 0.875*$cx-body-font-size;
 }
 
 button,
 input[type="reset"],
 input[type="button"],
 input[type="submit"] {
-    background: #f4f4f4;
-    color: #444;
-    border: 0;
-    padding: 0 30px;
+    border-width:1px;
+    border-style: solid;
+    min-height: 40px;
+    font-size: 0.85*$cx-body-font-size;
+    padding: 8px 20px;
     text-transform: uppercase;
-    font-size: 14px;
-    color: #444;
-    line-height: 43px;
-    height: 40px;
-    display: inline-block;
-    font-weight: 500;
-    box-shadow: none;
-    cursor: pointer;
-    @extend %slight-rounded;
+    letter-spacing: 1px;
+    @extend %bgc-primary;
+    @extend %color-white;
+    @extend %border-primary;
     @extend %cx-transition;
+    &:hover {
+        @extend %border-secondary;
+        @extend %bgc-secondary;
+    }
 }
 
 select:focus,
 button:focus,
 input:focus,
 textarea:focus {
-    border-color: $cx-secondary-color;
     outline: 0;
+    @extend %border-secondary;
 }
 
 button:hover,
 input[type="submit"]:hover,
 input[type="button"]:hover {
-    // @include cx-color(primary, border);
-    // @include cx-color(primary, bg);
     @extend %border-primary;
     @extend %bgc-primary;
 }
@@ -218,71 +204,14 @@ input[type="button"]:hover {
   font-size: 13px;
 }
 
-.nice-select {
-    width: 100%;
-    padding: 0 .75rem;
-    font-size: 12px;
-    height: 40px;
-    line-height: 40px;
-    border-color: #ddd;
-
-    &:not(.open) {
-        .list {
-            max-height: 0;
-        }
-    }
-
-    .list {
-        max-height: 280px;
-        height: auto;
-        overflow-y: auto;
-        width: 100%;
-
-        .selected {
-            font-weight: 500;
-        }
-
-        .option {
-            @extend %color-black;
-        }
-    }
-
-    span {
-        &.current {
-            // @include cx-default-color(color, black);
-            @extend %color-black;
-        }
-    }
-
-    &::after {
-        content: "\f107";
-        font-family: FontAwesome;
-        border: 0;
-        width: auto;
-        transform-origin: initial;
-        height: 40px;
-        line-height: 40px;
-        transform: rotate(0);
-        top: 4px;
-        right: 15px;
-        font-size: 12px;
-    }
-    
-    &.open {
-        &::after {
-            transform: rotate(180deg);
-        }
-    }
-}
-
 ::-webkit-selection {
-    background: $cx-primary-color;
+    background: #b3d4fc;
     text-shadow: none;
     color: #fff;
 }
 
 ::-moz-selection {
-    background: $cx-primary-color;
+    background: #b3d4fc;
     text-shadow: none;
     color: #fff;
 }

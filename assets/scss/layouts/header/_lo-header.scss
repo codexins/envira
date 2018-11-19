@@ -1,0 +1,56 @@
+/**
+ * Layout header/ Header
+ *
+ */
+ 
+.logo {
+	max-width:175px;
+	@include respond-to(mobile) {
+		max-width:150px;
+	}
+	a{
+		display: block;
+		width:100%;
+	}
+
+}
+
+
+.header-wrapper {
+	background: lighten($cx-body-bg-color, 100%);
+	position:relative;
+	.contact-info {
+		text-align: right;
+		float: right;
+		margin-right: -15px;
+		margin-top: 25px;
+		a {
+			color: $cx-text-color;
+			&:hover {
+				color: $cx-secondary-color;
+			}
+		}
+	}
+}
+
+.header-inline{
+    padding: 15px 0;
+    @include respond-to(mobile) {
+    	padding: 10px 0;
+    }
+}
+
+
+.mobile-menu-button{
+	overflow:hidden ;
+	@include media-only(notebook, max) {
+		margin-top: 11px;
+	}
+
+	@include media-only(tablet, max) {
+		margin-top: 9px;
+	}
+	.icon-bar{
+		@extend %bgc-white;
+	}
+}

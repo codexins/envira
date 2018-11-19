@@ -278,7 +278,7 @@ if ( ! function_exists( 'codexin_default_google_fonts' ) ) {
      */
     function codexin_default_google_fonts() {
         $fonts_url = '';
-        $fonts     =  apply_filters( 'codexin_default_google_fonts', array( 'Rubik:300,300i,400,400i,500,500i,700,700i,900,900i', 'Montserrat+Roboto:400,700' ) );
+        $fonts     =  apply_filters( 'codexin_default_google_fonts', array( 'Open+Sans:400,600,700', 'PT+Sans:400,700' ) );
         if ( $fonts ) {
             $subsets   = apply_filters( 'codexin_default_google_fonts', 'latin' );
             $fonts_url = add_query_arg( array(
@@ -330,9 +330,7 @@ if ( ! function_exists( 'codexin_get_smart_slider' ) ) {
                 $result .= '<div class="slider-wrapper">';
                     if( ! empty( $slider_id ) ){
                         $result .= do_shortcode('[smartslider3 slider='. $slider_id .']');
-                    } else {
-                        $result .= sprintf( '<div class="no-slider text-center"><h3>%1$s</h3></div>', esc_html__( 'Please select a \'Slider Name\' from \'Page Edit\' section and click on \'Update\'', 'envira' ) );
-                    }
+                    } 
                 $result .= '</div> <!-- end of slider-wrapper -->';
 
             } else {

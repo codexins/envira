@@ -314,26 +314,6 @@ if( ! class_exists( 'Codexin_Framework' ) ) {
 				}
 			}
 
-			/**
-			 * Adding woocommerce compitability to theme structure
-			 *
-			 * @uses 	add_action()
-			 * @uses 	remove_action()
-			 * @since 	v1.0
-			 */
-			remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
-			remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
-
-			add_action('woocommerce_before_main_content', 'codexin_wrapper_start', 10);
-			add_action('woocommerce_after_main_content', 'codexin_wrapper_end', 10);
-
-			function codexin_wrapper_start() {
-				echo '<div class="container">';
-			}
-
-			function codexin_wrapper_end() {
-				echo '</div>';
-			}
 		}
 
 		/**

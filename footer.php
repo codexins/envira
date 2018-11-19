@@ -56,7 +56,7 @@ $to_top 		= codexin_get_option( 'cx_enable_totop' );
 			<?php } ?>
 		</footer>
 		<!-- End of Footer -->
-		
+
 		<?php 
 	    if( $to_top ) { ?>
 	    	<!-- Go to Top Button at right bottom of the window screen -->
@@ -66,7 +66,9 @@ $to_top 		= codexin_get_option( 'cx_enable_totop' );
 		    <!-- Go to Top Button finished-->
 	    <?php } ?>
 	</div>
-	<!-- End of Whole Site Wrapper -->
+	<!-- End of o-wrapper -->
+
+	<div id="c-mask" class="c-mask"></div> <!-- Empty placeholder for Mobile Menu masking -->
 
 	<?php wp_footer() ?>
 </body>

@@ -1,0 +1,22 @@
+/**
+ * Components Back to Top
+ *
+ */
+
+ div#to_top {
+    position: fixed;
+    right: 20px;
+    bottom: 25px;
+    margin: auto;
+    cursor: pointer;
+    z-index:99;
+    opacity: 0.7;
+    @extend %bgc-secondary;
+    @extend %color-white;
+    @extend %cx-transition;
+    @include box(40px, 40px);
+    display: none;
+    &:hover {
+        opacity:1;
+    }
+}
