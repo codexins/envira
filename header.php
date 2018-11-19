@@ -10,7 +10,7 @@
  */
 
 // Do not allow directly accessing this file.
-defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'TEXT_DOMAIN' ) );
+defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'envira' ) );
 
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -38,7 +38,7 @@ defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directl
 
 	<!-- Start of Mobile Navigation -->
 	<div id="c-menu--slide-left" class="c-menu c-menu--slide-left d-block d-sm-block d-md-none">
-	    <button class="c-menu__close"><?php echo esc_html__( '&larr; Back', 'TEXT_DOMAIN' ); ?></button>
+	    <button class="c-menu__close"><?php echo esc_html__( '&larr; Back', 'envira' ); ?></button>
 	    <?php codexin_menu( 'mobile_menu' ); ?>
 	</div>
 	<!-- End of Mobile Navigation -->
@@ -81,7 +81,7 @@ defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directl
 							<div id="o-wrapper" class="mobile-nav o-wrapper d-block d-sm-block d-md-none">
 								<div class="primary-nav">
 									<button id="c-button--slide-left" class="primary-nav-details">
-										<?php echo esc_html__( 'Menu', 'TEXT_DOMAIN' ); ?> <i class="fa fa-bars"></i>
+										<?php echo esc_html__( 'Menu', 'envira' ); ?> <i class="fa fa-bars"></i>
 									</button>
 								</div>
 							</div>

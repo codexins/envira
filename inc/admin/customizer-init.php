@@ -9,7 +9,7 @@
  */
 
 // Do not allow directly accessing this file.
-defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'TEXT_DOMAIN' ) );
+defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'envira' ) );
 
 /**
  * Initialize kirki if found active
@@ -79,10 +79,10 @@ function codexin_modify_customizer( $wp_customize ) {
     $wp_customize->get_control('header_textcolor')->priority = 11;
 
 	// Change some default title and description.
-    $wp_customize->get_section('background_image')->title       = esc_html__('Site Background', 'TEXT_DOMAIN');
-    $wp_customize->get_section('background_image')->description = esc_html__('Site Background Options', 'TEXT_DOMAIN');
-    $wp_customize->get_section('title_tagline')->title 			= esc_html__('Site Logo/Title/Tagline', 'TEXT_DOMAIN');
-    $wp_customize->get_section('header_image')->title 			= esc_html__('Header Options', 'TEXT_DOMAIN');
+    $wp_customize->get_section('background_image')->title       = esc_html__('Site Background', 'envira');
+    $wp_customize->get_section('background_image')->description = esc_html__('Site Background Options', 'envira');
+    $wp_customize->get_section('title_tagline')->title 			= esc_html__('Site Logo/Title/Tagline', 'envira');
+    $wp_customize->get_section('header_image')->title 			= esc_html__('Header Options', 'envira');
 
 	// move some general controls
     $wp_customize->get_section('static_front_page')->panel = 'general_settings';
