@@ -16,11 +16,11 @@ get_header();
 
 $layout          	= ! empty( codexin_get_option( 'cx_blog_arc_layout' ) ) ? codexin_get_option( 'cx_blog_arc_layout' ) : 'right';
 $column_lg       	= ( $layout == 'left' || $layout == 'right' ) ? '8' : '12';
-$column_xl       	= ( $layout == 'left' || $layout == 'right' ) ? '9' : '12';
+$column_xl       	= ( $layout == 'left' || $layout == 'right' ) ? '8' : '12';
 $sidebar_class_lg	= ( $layout == 'no' ) ? '' : '4';
 $sidebar_class_xl	= ( $layout == 'no' ) ? '' : '3';
-$order_class     	= ( $layout == 'left') ? ' order-1 order-md-1 order-lg-2' : '';
-$sb_order_class  	= ( $layout == 'left') ? ' order-2 order-md-2 order-lg-1' : '';
+$order_class     	= ( $layout == 'left') ? ' order-1 order-md-1 order-lg-2 offset-xl-1' : '';
+$sb_order_class  	= ( $layout == 'left') ? ' order-2 order-md-2 order-lg-1' : ' offset-xl-1';
 $pagination 		= codexin_get_option( 'cx_blog_pagination' );
 ?>
 

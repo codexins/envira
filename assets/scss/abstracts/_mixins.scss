@@ -255,35 +255,22 @@
 //-------------------- Button --------------------//
 // Usage @include button(20px 30px);
 
-@mixin button($padding: 12px 32px){
-    min-width: 165px;
-    padding: $padding;
+// button 
+ @mixin button($padding:8px 20px){
+    padding:$padding;
     display: inline-block;
     background: transparent;
-    overflow: hidden;
-    font-size: 12px;
-    font-weight: 700;
-    line-height: 1.5em;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    border-width: 1.2px;
+    border-width:1px;
     border-style: solid;
-    color: $cx-text-color;
-    border-color: $cx-text-color;
+    @extend %border-default;
+    @extend %color-text;
     @extend %cx-transition;
-    &::before {
-        width: 150%;
-        height: 100%;
-        @include abs-position(0, auto, auto, 0);
-    }
     &:hover {
-        border-color: $cx-link-color;
-        color: $cx-body-bg-color;
-        &::before {
-            background: $cx-link-color;
-        }
+        @extend %border-secondary;
+        @extend %bgc-secondary;
+        @extend %color-white;
     }
-}
+ }
 
 
 //-------------------- input Placeholder --------------------//

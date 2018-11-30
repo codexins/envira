@@ -34,9 +34,9 @@ h6 {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: $cx-body-font;
+    font-family: $cx-heading-font;
     font-weight: 700;
-    @extend %default-heading;    
+    @extend %default-heading;   
 }
 
 .fa {
@@ -79,7 +79,7 @@ img {
 a {
     @extend %cx-transition;
     text-decoration: none;
-    @extend %color-secondary;
+    @extend %color-primary;
 }
 
 a:hover, a:focus {
@@ -89,15 +89,15 @@ a:hover, a:focus {
 a:focus, a:active, a:hover {
     outline: 0 none;
     text-decoration: none;
-    @extend %color-primary;
+    @extend %color-secondary;
 }
 
 .btn-link {
-    @extend %color-secondary;
+    @extend %color-primary;
     &:hover,
     &:focus,
     &:active {
-        @extend %color-primary;
+        @extend %color-secondary;
     }
 }
 
@@ -160,6 +160,7 @@ input[type="submit"] {
     min-height: 40px;
     font-size: 0.85*$cx-body-font-size;
     padding: 8px 20px;
+    cursor: pointer;
     text-transform: uppercase;
     letter-spacing: 1px;
     @extend %bgc-primary;
@@ -172,9 +173,7 @@ input[type="submit"] {
     }
 }
 
-select:focus,
 button:focus,
-input:focus,
 textarea:focus {
     outline: 0;
     @extend %border-secondary;

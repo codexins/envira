@@ -1,0 +1,37 @@
+/**
+ * Components widgetized menu
+ *
+ */
+
+.widget_nav_menu {
+	padding: 0;
+	ul ul {
+		padding-top: 10px;
+		padding-left: 3px;
+	}
+
+	li {
+		list-style-type: none;
+		position: relative;
+		padding-left: 17px;
+		&::before {
+			content:'\f105';
+			font-family: FontAwesome;
+			position: absolute;
+			left:0;
+			top:0;
+			display: inline-block;
+		}
+		padding-bottom: 8px;
+
+		&:last-child {
+			padding-bottom: 0;
+			@extend %mb0;
+		}
+	}
+
+	.menu {
+		padding:0;
+		@extend %mb0;
+	}
+}

@@ -15,7 +15,7 @@ get_header(); ?>
 <div id="content" class="main-content-wrapper">
 	<div class="container">
 		<div class="row">
-			<div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-9 order-1 order-md-1 order-lg-2">
+			<div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 offset-xl-1 order-1 order-md-1 order-lg-2">
 				<main id="primary" class="site-main">
 					<?php 
 					if ( have_posts() ) { 

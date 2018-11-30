@@ -113,10 +113,10 @@ Kirki::add_field( $config_id, array(
     'description' => esc_html__('Change Body font family and font style.', 'envira'),
     'section'     => 'cx_typography_body',
 	'default'     => array(
-		'font-family'    => 'Roboto',
+		'font-family'    => 'Open Sans',
 		'font-weight'    => 'regular',
-		'font-size'      => '14px',
-		'line-height'    => '1.5'
+		'font-size'      => '16px',
+		'line-height'    => '1.6'
 	),
     'priority'    => 10,
     'choices'     => array(
@@ -129,7 +129,7 @@ Kirki::add_field( $config_id, array(
     'transport'   => 'auto',
     'output'      => array(
         array(
-            'element' => 'body, button, input, select, textarea',
+            'element' => 'html, body, button, input, select, textarea',
         ),
     ),
 ));
@@ -141,9 +141,9 @@ Kirki::add_field( $config_id, array(
     'description' => esc_html__('Change Navigation Menu font family and font style.', 'envira'),
     'section'     => 'cx_typography_nav',
 	'default'     => array(
-        'font-size'         => '14px',
-        'line-height'       => '33px',
-        'font-family'       => 'Montserrat',
+        'font-size'         => '16px',
+        'line-height'       => '26px',
+        'font-family'       => 'Open Sans',
         'font-weight'       => '400',
         'text-transform'    => 'uppercase',
 	),
@@ -172,8 +172,8 @@ Kirki::add_field( $config_id, array(
     'section'     => 'cx_typography_h1',
 	'default'     => array(
         'font-size'   		=> '32px',
-        'font-family' 		=> 'Montserrat',
-        'font-weight' 		=> '600',
+        'font-family' 		=> 'PT Sans',
+        'font-weight' 		=> '700',
         'text-transform'    => 'uppercase',
         'line-height'    	=> '1.2'
 	),
@@ -202,8 +202,8 @@ Kirki::add_field( $config_id, array(
     'section'     => 'cx_typography_h2',
 	'default'     => array(
         'font-size'   		=> '28px',
-        'font-family' 		=> 'Montserrat',
-        'font-weight' 		=> '600',
+        'font-family' 		=> 'PT Sans',
+        'font-weight' 		=> '700',
         'text-transform'    => 'uppercase',
         'line-height'    	=> '1.2'
 	),
@@ -232,8 +232,8 @@ Kirki::add_field( $config_id, array(
     'section'     => 'cx_typography_h3',
 	'default'     => array(
         'font-size'   		=> '24px',
-        'font-family' 		=> 'Montserrat',
-        'font-weight' 		=> '600',
+        'font-family' 		=> 'PT Sans',
+        'font-weight' 		=> '700',
         'text-transform'    => 'uppercase',
         'line-height'    	=> '1.2'
 	),
@@ -262,8 +262,8 @@ Kirki::add_field( $config_id, array(
     'section'     => 'cx_typography_h4',
 	'default'     => array(
         'font-size'   		=> '21px',
-        'font-family' 		=> 'Montserrat',
-        'font-weight' 		=> '600',
+        'font-family' 		=> 'PT Sans',
+        'font-weight' 		=> '700',
         'text-transform'    => 'uppercase',
         'line-height'    	=> '1.2'
 	),
@@ -292,8 +292,8 @@ Kirki::add_field( $config_id, array(
     'section'     => 'cx_typography_h5',
 	'default'     => array(
         'font-size'   		=> '18px',
-        'font-family' 		=> 'Montserrat',
-        'font-weight' 		=> '600',
+        'font-family' 		=> 'PT Sans',
+        'font-weight' 		=> '700',
         'text-transform'    => 'uppercase',
         'line-height'    	=> '1.2'
 	),
@@ -321,9 +321,9 @@ Kirki::add_field( $config_id, array(
     'description' => esc_html__('Change h6 font family and font style.', 'envira'),
     'section'     => 'cx_typography_h6',
 	'default'     => array(
-        'font-size'   		=> '15px',
-        'font-family' 		=> 'Montserrat',
-        'font-weight' 		=> '600',
+        'font-size'   		=> '16px',
+        'font-family' 		=> 'PT Sans',
+        'font-weight' 		=> '700',
         'text-transform'    => 'uppercase',
         'line-height'    	=> '1.2'
 	),
@@ -355,7 +355,7 @@ Kirki::add_field( $config_id, array(
     'section'           => 'cx_color_scheme',
     'type'              => 'color',
     'priority'          => 20,
-    'default'           => '#333',
+    'default'           => '#000',
     'sanitize_callback' => 'codexin_sanitize_color',
     'output'            => array(
         array(
@@ -373,11 +373,11 @@ Kirki::add_field( $config_id, array(
     'section'           => 'cx_color_scheme',
     'type'              => 'color',
     'priority'          => 20,
-    'default'           => '#fff',
+    'default'           => '#000',
     'sanitize_callback' => 'codexin_sanitize_color',
     'output'            => array(
         array(
-            'element'  => '#main_nav li a',
+            'element'  => '#main_menu li a',
             'property' => 'color',
         ),
     ),
@@ -391,18 +391,18 @@ Kirki::add_field( $config_id, array(
     'section'           => 'cx_color_scheme',
     'type'              => 'color',
     'priority'          => 30,
-    'default'           => '#295970',
+    'default'           => '#1ca5b8',
     'sanitize_callback' => 'codexin_sanitize_color',
     'output'            => array(
-        array(
-            'element'  => $color_selectors['primary_color_selectors'],
-            'property' => 'color',
-        ),
+        // array(
+        //     'element'  => $color_selectors['primary_color_selectors'],
+        //     'property' => 'color',
+        // ),
 
-        array(
-            'element'  => $color_selectors['primary_color_in_bg_selectors'],
-            'property' => 'background-color'
-        ),
+        // array(
+        //     'element'  => $color_selectors['primary_color_in_bg_selectors'],
+        //     'property' => 'background-color'
+        // ),
 
         // array(
         //     'element'  => 'h2',
@@ -419,7 +419,7 @@ Kirki::add_field( $config_id, array(
     'section'           => 'cx_color_scheme',
     'type'              => 'color',
     'priority'          => 40,
-    'default'           => '#fce38a',
+    'default'           => '#ff646c',
     'sanitize_callback' => 'codexin_sanitize_color',
     'output'            => array(
         array(
@@ -447,7 +447,7 @@ Kirki::add_field( $config_id, array(
     'section'           => 'cx_color_scheme',
     'type'              => 'color',
     'priority'          => 50,
-    'default'           => '#fce38a',
+    'default'           => '#0b4249',
     'sanitize_callback' => 'codexin_sanitize_color',
     'output'            => array(
         array(
@@ -475,7 +475,7 @@ Kirki::add_field( $config_id, array(
     'section'           => 'cx_color_scheme',
     'type'              => 'color',
     'priority'          => 60,
-    'default'           => '#ddd',
+    'default'           => '#cccccc',
     'sanitize_callback' => 'codexin_sanitize_color',
     'output'            => array(
         array(
@@ -493,7 +493,7 @@ Kirki::add_field( $config_id, array(
     'section'           => 'cx_color_scheme',
     'type'              => 'color',
     'priority'          => 70,
-    'default'           => '#fafafa',
+    'default'           => '#f3f3f3',
     'sanitize_callback' => 'codexin_sanitize_color',
     'output'            => array(
         array(
@@ -564,7 +564,7 @@ Kirki::add_field( $config_id, array(
 Kirki::add_field( $config_id, array(
 	'settings'    	=> 'title_background_setting',
 	'label'       	=> esc_html__( 'Page Title Background', 'envira' ),
-	'description' 	=> esc_html__( 'Page header with image, color, etc.', 'envira' ),
+	'description' 	=> esc_html__( 'Page header with color or image', 'envira' ),
 	'type'        	=> 'background',
 	'section'     	=> 'cx_page_title_section',
 	'priority' 		=> 15,
@@ -586,14 +586,35 @@ Kirki::add_field( $config_id, array(
 ) );
 
 Kirki::add_field( $config_id, array(
+    'settings'      => 'title_background_overlay_setting',
+    'label'         => esc_html__( 'Page Title Background Overlay', 'envira' ),
+    'description'   => esc_html__( 'Page header background overlay', 'envira' ),
+    'type'          => 'color',
+    'section'       => 'cx_page_title_section',
+    'priority'      => 16,
+    'default'       => 'rgba(0,0,0,.55)',
+    'choices'     => array(
+        'alpha' => true,
+    ),
+    'transport'     => 'auto',
+    'output'        => array(
+        array(
+            'element'  => '.page-title::before',
+            'property' => 'background-color',
+        ),
+    ),
+) );
+
+
+Kirki::add_field( $config_id, array(
     'settings'      => 'cx_pt_top_spacing',
     'label'         => esc_html__( 'Page Title Top Spacing', 'envira' ),
     'section'       => 'cx_page_title_section',
     'type'          => 'slider',
     'priority'      => 20,
-    'default'       => 40,
+    'default'       => 90,
     'choices'       => array(
-        'max'  => 100,
+        'max'  => 300,
         'min'  => 0,
         'step' => 1,
     ),
@@ -614,9 +635,9 @@ Kirki::add_field( $config_id, array(
     'section'       => 'cx_page_title_section',
     'type'          => 'slider',
     'priority'      => 25,
-    'default'       => 40,
+    'default'       => 90,
     'choices'       => array(
-        'max'  => 100,
+        'max'  => 300,
         'min'  => 0,
         'step' => 1,
     ),
@@ -972,7 +993,7 @@ Kirki::add_field( $config_id, array(
 	'section'     	=> 'cx_footer_section',
 	'priority' 		=> 10,
 	'default'     	=> array(
-		'background-color'      => '#333',
+		'background-color'      => '#1ca5b8',
 		'background-image'      => '',
 		'background-repeat'     => 'repeat',
 		'background-position'   => 'center center',
@@ -994,7 +1015,7 @@ Kirki::add_field( $config_id, array(
     'section'       => 'cx_footer_section',
     'type'          => 'slider',
     'priority'      => 20,
-    'default'       => 40,
+    'default'       => 90,
     'choices'       => array(
         'max'  => 100,
         'min'  => 0,
@@ -1003,7 +1024,7 @@ Kirki::add_field( $config_id, array(
     'transport'     => 'auto',
     'output'        => array(
         array(
-            'element'  => '.footer-widgets-area',
+            'element'  => 'footer#colophon',
             'property' => 'padding-top',
             'units'    => 'px',
         ),
@@ -1017,7 +1038,7 @@ Kirki::add_field( $config_id, array(
     'section'       => 'cx_footer_section',
     'type'          => 'slider',
     'priority'      => 25,
-    'default'       => 40,
+    'default'       => 90,
     'choices'       => array(
         'max'  => 100,
         'min'  => 0,
@@ -1026,7 +1047,7 @@ Kirki::add_field( $config_id, array(
     'transport'     => 'auto',
     'output'        => array(
         array(
-            'element'  => '.footer-widgets-area',
+            'element'  => '.footer-top',
             'property' => 'padding-bottom',
             'units'    => 'px',
         ),
@@ -1055,11 +1076,11 @@ Kirki::add_field( $config_id, array(
 	'type'        	=> 'color-alpha',
 	'section'     	=> 'cx_footer_copy_section',
 	'priority' 		=> 10,
-    'default'       => '#333',
+    'default'       => '#0b4249',
 	'transport'     => 'auto',
     'output'        => array(
         array(
-            'element'  => '.footer-copyright',
+            'element'  => '.copyright-section',
             'property' => 'background-color',
         ),
     ),
@@ -1084,7 +1105,7 @@ Kirki::add_field( $config_id, array(
 	'transport'     => 'auto',
     'output'        => array(
         array(
-            'element'  => '.footer-copyright',
+            'element'  => '.copyright-section',
             'property' => 'color',
         ),
     ),
@@ -1115,6 +1136,53 @@ Kirki::add_field( $config_id, array(
         )
     ),
 ) );
+
+
+Kirki::add_field( $config_id, array(
+    'settings'      => 'cx_footer_copyright_top_spacing',
+    'label'         => esc_html__( 'Copyright Top Spacing', 'envira' ),
+    'section'       => 'cx_footer_copy_section',
+    'type'          => 'slider',
+    'priority'      => 20,
+    'default'       => 30,
+    'choices'       => array(
+        'max'  => 100,
+        'min'  => 0,
+        'step' => 1,
+    ),
+    'transport'     => 'auto',
+    'output'        => array(
+        array(
+            'element'  => '.copyright-section',
+            'property' => 'padding-top',
+            'units'    => 'px',
+        ),
+    ),
+    'sanitize_callback' => 'codexin_sanitize_number',
+));
+
+Kirki::add_field( $config_id, array(
+    'settings'      => 'cx_footer_copyright_bottom_spacing',
+    'label'         => esc_html__( 'Copyright Bottom Spacing', 'envira' ),
+    'section'       => 'cx_footer_copy_section',
+    'type'          => 'slider',
+    'priority'      => 25,
+    'default'       => 30,
+    'choices'       => array(
+        'max'  => 100,
+        'min'  => 0,
+        'step' => 1,
+    ),
+    'transport'     => 'auto',
+    'output'        => array(
+        array(
+            'element'  => '.copyright-section',
+            'property' => 'padding-bottom',
+            'units'    => 'px',
+        ),
+    ),
+    'sanitize_callback' => 'codexin_sanitize_number',
+));
 
 // Kirki::add_field( $config_id, array(
 // 	'settings'    	=> 'cx_advanced_custom_js',

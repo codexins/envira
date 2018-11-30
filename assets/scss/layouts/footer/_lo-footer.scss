@@ -1,0 +1,78 @@
+/**
+ * layout footer/ footer
+ *
+ */
+
+footer{
+	padding-top: $cx-section-spacing;
+	@extend %bgc-primary;
+	@extend %color-white;
+	@include respond-to(mobile) {
+		 padding-top: $cx-section-spacing-mob;
+	}
+}
+
+.footer-top {
+	padding-bottom: $cx-col-spacing;
+	@include respond-to(mobile) {
+		padding-bottom: $cx-col-spacing-mob;
+	}
+}
+
+.footer-widgets-area .widgettitle{
+	margin-bottom:35px;
+	font-size: 20px;
+	text-transform:uppercase;
+	@extend %color-white;
+	@include respond-to(mobile) {
+		margin-bottom: 20px;
+	}
+}
+
+.footer-widget-wrapper {
+	@include respond-to (mobile) {
+		margin-bottom: $cx-col-spacing-mob;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+
+.footer-widget {
+	a {
+		@extend %color-white;
+		&:hover {
+			@extend %color-secondary;
+		}
+	}
+	
+
+	::-webkit-input-placeholder {
+		color:lighten($cx-text-color, 100%);
+	}
+
+	::-moz-placeholder {
+		color:lighten($cx-text-color, 100%);
+	}
+}
+
+.copyright-section {
+	position:relative;
+	text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    @extend %bgc-tertiary;
+    @extend %color-white;
+    p{
+    	margin: 0;
+    }
+
+    a {
+    	@extend %color-secondary;
+    }
+
+    .copyright-legal {
+    	text-align: center;
+    }
+}

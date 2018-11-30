@@ -14,6 +14,10 @@ img {
     height: auto;
 }
 
+.site-content {
+    word-wrap: break-word;
+}
+
 .alignright {
     float: right;
     margin: 5px 0 15px 15px;
@@ -54,6 +58,8 @@ a img.aligncenter {
 .wp-caption-text {
     padding: 5px 10px;
     font-size: 85%;
+    @extend %color-text;
+    @extend %bgc-offset;
 }
 
 .wp-caption.alignnone {
@@ -78,10 +84,11 @@ a img.aligncenter {
 }
 
 .wp-caption p.wp-caption-text {
-    font-size: 11px;
+    font-size: 12px;
     line-height: 17px;
     margin: 0;
     padding: 8px;
+    @extend %bgc-offset;
 }
 
 .page-links {
@@ -224,7 +231,7 @@ select {
  */
 
 #comments {
-    margin-top: 60px;
+    @extend %mt-full;
 }
 
 .posts-nav+#comments {
@@ -296,7 +303,7 @@ select {
 }
 
 .comment-form-comment {
-    margin-bottom: 20px;
+    // margin-bottom: 20px;
 }
 
 #commentform input[type="text"] {

@@ -1,0 +1,157 @@
+/**
+ * layout blog/ blog list
+ *
+ */
+
+#primary .post-item:first-child {
+	border-top:0;
+	padding-top: 0;
+}
+
+.post-item {
+	border-top-width: 1px;
+	border-top-style: solid;
+	@extend %border-default;
+	padding-top: 15px;
+	.element-carousel {
+		margin-bottom: $cx-heading-margin-bottom;
+		position: relative;
+		.swiper-arrow {
+			position: absolute;
+			bottom:0;
+			right:0;
+			z-index: 1;
+			@include box(36px);
+			@extend %bgc-primary;
+			@extend %color-white;
+			@extend %cx-transition;
+			opacity: .7;
+			&:hover {
+				@extend %bgc-secondary;
+				opacity: 1;
+			}
+
+			&.prev {
+				right: 40px;
+			}
+		}
+	}
+	.post-media {
+		margin-bottom: $cx-heading-margin-bottom;
+		a {
+			display: inline-block;
+			width: auto;
+			opacity:1;
+			@extend %cx-transition;
+		}
+
+		&:hover {
+			a {
+				opacity: .85;
+			}
+		}
+	}
+
+	margin-bottom: $cx-section-spacing;
+	@include respond-to(mobile) {
+		margin-bottom: $cx-section-spacing-mob;
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+
+
+.post-title {
+	text-transform: capitalize;
+	a {
+		@extend %color-text;
+		&:hover {
+			@extend %color-secondary;
+		}
+	}
+}
+
+.post-meta-wrapper {
+	span {
+		color: lighten($cx-text-color, 20%);
+		display: block;
+		float: left;
+
+		padding-right:40px;
+		@include respond-to(tablet) {
+			padding-right: 30px;
+		}
+
+		@include respond-to(mobile) {
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+
+		margin-bottom: 5px;
+		position: relative;
+		font-size: 90%;
+		&:first-child {
+			padding-left: 0;
+		}
+
+		i {
+			display: inline-block;
+			margin-right:5px;
+		}
+
+		&::after {
+			@include abs-position(0, 20px, 0, auto);
+			@include respond-to(tablet) {
+				right:15px;
+			}
+			@include box(1px, 12px);
+			margin:auto;
+			background: lighten($cx-text-color, 20%);
+
+		}
+
+		&:last-child {
+			&::after {
+				display: none;
+			}
+		}
+	}
+
+	a {
+		@extend %color-text;
+		&:hover {
+			@extend %color-secondary;	
+		}
+	}
+
+	@extend %clearfix;
+}
+
+.posts-wrapper + .pagination-wrapper {
+	margin-top: $cx-col-spacing;
+	@include respond-to(mobile) {
+		margin-top: $cx-col-spacing-mob;
+	}
+
+	.pagination {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+}
+
+.posts-nav {
+	border-top-width: 1px;
+	border-top-style: solid;
+	@extend %border-default;
+	@extend %mt-full;
+	.nav-next {
+		margin: 10px 0 0px 15px;
+	}
+
+	.nav-previous {
+		margin: 10px 15px 0px 0;	
+	}
+}

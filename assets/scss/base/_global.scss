@@ -21,6 +21,13 @@ section {
 	}
 }
 
+#content {
+	margin-top: $cx-section-spacing; 
+	@include respond-to(mobile) {
+		// margin-bottom: $cx-section-spacing-mob;
+	}
+}
+
 .lead {
 	font-size: 19px;
 }
@@ -258,3 +265,23 @@ section {
 }
 
 
+.cx-fluid-wrapper {
+    padding: 0px;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    margin-bottom: 20px;
+    @extend .pos-r;
+
+    iframe {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        @extend .pos-a;
+    }
+}
+
+// .rwmb-oembed-not-available {
+// 	display: none;
+// }

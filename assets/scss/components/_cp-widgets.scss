@@ -1,0 +1,564 @@
+/**
+ * Components Widgets
+ *
+ */
+
+ #secondary {
+ 	.widgettitle {
+ 		text-transform: capitalize;
+ 		font-size: 26px;
+ 	}
+ }
+
+
+.widget_categories,
+.widget_recent_comments,
+.widget_recent_entries,
+.widget_rss,
+.widget_meta,
+.widget_pages,
+.widget_archive {
+	@extend .widget_nav_menu; 
+}
+
+.sidebar-widget {
+	padding-top:$cx-col-spacing;
+	padding-bottom:$cx-col-spacing;
+	&:first-child {
+		@extend %pt0;
+	}
+	> ul {
+		padding-left:0;
+		@extend %mb0;
+	}
+
+	li {
+		padding-bottom: 8px;
+		&:last-child {
+			@extend %pb0;
+		}
+
+		a {
+			@extend %color-text;
+			&:hover {
+				@extend %color-secondary;
+			}
+		}
+	}
+
+	border-bottom-width:1px;
+	border-bottom-style: dashed;
+	@extend %border-default;
+
+	&:last-child {
+		border-bottom: 0;
+		@extend %pb0;
+	}
+
+	.recentcomments {
+		a {
+			font-style: normal;
+			text-decoration: underline;
+		}
+	}
+	
+	.comment-author-link {
+		a {
+			font-style: italic;
+			text-decoration: none;
+			font-weight: 600;
+		}
+	}
+
+	ul:last-child {
+		@extend %mb0;
+	}
+
+	ul ul {
+		padding-top: 10px;
+	}
+
+	select {
+		width:100%;
+		@extend %mb0;
+	}
+
+	.social-icons {
+		li {
+			padding-left: 0;
+		}
+
+		li::before {
+			display: none;
+		}
+	}
+
+	@include respond-to(mobile) {
+		padding-top: $cx-col-spacing-mob;
+		padding-bottom: $cx-col-spacing-mob;
+	}
+}
+
+
+
+
+.widget_rss {
+	li {
+		padding-bottom: 20px;
+		
+		.rsswidget {
+			font-weight: bold;
+			display: block;
+			clear: both;
+		}
+
+		.rssSummary,
+		.rss-date {
+			display: block;
+			margin-bottom: 10px;
+		}
+	}
+}
+
+
+// Search Widget
+
+.search-widget {
+	form {
+		display: table;
+		width:100%;
+		overflow:hidden;
+		input {
+			display: table-cell;
+			vertical-align: middle;
+			margin-bottom: 0;
+			height:43px;
+		}
+		
+		input[type="text"],
+		input[type="search"] {
+			float: left;
+			width: calc(100% - 95px);
+			border-right:0;
+		}
+
+		input[type="submit"] {
+			float: right;
+			width:95px;
+
+		}
+	}
+}
+
+//support widget 
+
+.support-widget {
+	position: relative;
+	img{
+		width:100%;
+		display: block;
+	}
+	a {
+		position:absolute;
+		width:100%;
+		padding:15px;
+		display: block;
+		bottom:45px;
+		left:0;
+		text-align: center;
+		@extend %bgc-tertiary;
+		@extend %color-white;
+		span {
+			display: block;
+			font-size: 16px;
+		}
+		@include respond-to(mobile) {
+			bottom:30px;
+		}
+	}
+
+	@include respond-to(large-mobile) {
+		width: 400px;
+	}
+
+}
+
+
+
+
+// Recent Posts Widget
+.recent-posts-single {
+	padding-bottom: 15px;
+	padding-top: 15px;
+	border-bottom: 1px solid lighten($cx-border-color, 10%);
+	@include eqheight;
+	.img-thumb {
+		width:100px;
+		img {
+			width:100%;
+		}
+
+		a {
+			opacity: 1;
+			display: block;
+			width:100%;
+			height:100%;
+			&:hover {
+				opacity: .85;
+			}
+		}
+	}
+
+	& > div {
+		@include respond-to(mobile) {
+			display: table-cell;
+		}
+	}
+
+	.post-brief {
+		padding-left: 10px;
+		a {
+			color: $cx-text-color;
+			&:hover,
+			&:focus {
+				color: $cx-secondary-color;
+			}
+		}
+
+		h3 {
+			margin-bottom: 3px;
+			font-size: 16px;
+		}
+
+		p {
+			margin-bottom: 0;
+			color:lighten($cx-text-color, 20%);
+			font-style: italic;
+			font-size: 90%;
+		}
+	}
+
+	&:first-child {
+		padding-top: 0;
+	}
+
+	&:last-child {
+		padding-bottom: 0;
+		border-bottom:0;
+	}
+
+}
+
+// Tags Widget
+
+.widget_tag_cloud {
+	padding-bottom: ($cx-col-spacing - 10px);
+/* 	ul {
+	margin: 0;
+	padding: 0;
+	li {
+		list-style-type: none;
+		display: inline-block;
+		margin-right:5px;
+		margin-bottom:10px;
+	}
+} */
+
+	a {
+		padding: 7px 15px;
+		display: inline-block;
+		margin-right: 5px;
+		margin-bottom: 10px;
+		border-width: 1px;
+		border-style: solid;
+		text-decoration: none;
+		@extend %border-default;
+		@extend %color-text;
+		&:hover,
+		&:focus {
+			@extend %color-white;
+			@extend %bgc-secondary;
+			@extend %border-secondary;
+		}
+
+	}
+}
+
+//Category Widget
+
+.category-widget {
+	ul {
+		margin: 0;
+		padding: 0;
+		li {
+			list-style-type: none;
+			a {
+				color: $cx-text-color;
+				display: block;
+				padding:8px 10px 8px 0;
+				border-bottom: 1px solid lighten($cx-border-color, 10%);
+				span {
+					float: right;
+				}
+				&:hover {
+					// color: $cx-link-hover-color;
+				}
+			}
+		}
+	}
+}
+
+// service widget
+
+.service-widget {
+	@extend .category-widget;
+	ul {
+		li {
+			a {
+			    padding: 8px 10px 8px 45px;
+			    margin-bottom: 5px;
+			    position: relative;
+			    &::before {
+				    content: "\f156";
+				    font-family: "Flaticon";
+				    position: absolute;
+				    left: 0;
+				    top: 0;
+				    right: auto;
+				    bottom: 0;
+				    margin: auto;
+				    display: block;
+				    padding-top: 8px;
+				    padding-bottom: 8px;
+				    padding-left: 15px;
+			    }
+			    @extend %bgc-offset;
+			}
+		}
+	}
+}
+
+
+// Instagram Widget
+
+.instagram-widget {
+	@extend %clearfix;
+	ul {
+		margin: 0;
+		padding: 0;
+		li {
+			list-style-type: none;
+			display: block;
+			width:76px;
+			height:auto;
+			float:left;
+			margin-right:10px;
+			margin-bottom:10px;
+			a {
+				display: block;
+				width:100%;
+				height:100%;
+				img {
+					width:100%;
+					height:auto;
+				}		
+			}
+		}
+	}
+}
+
+// working hour widget
+.working-hour-widget {
+	ul {
+		margin: 0;
+		padding: 0;
+		border:1px solid #fff;
+		display: block;
+		max-width:87%;
+		li {
+			list-style-type: none;
+			display: block;
+			border-bottom:1px solid #fff;
+			padding:5px 15px;
+			span {
+				text-align: right;
+				display: inline-block;
+				float: right;
+			}
+			&:last-child {
+				border-bottom:0;
+			}
+
+			@include respond-to(notebook) {
+				font-size: 14px;
+			}
+		}
+		@include respond-to(notebook) {
+			max-width:100%;
+		}
+
+		@include respond-to(large-mobile) {
+			max-width: 400px;
+		}
+	}
+}
+
+// calendar widget
+
+#wp-calendar {
+	width: 100%;
+	@extend %mb0;
+	@extend %bgc-offset;
+	caption {
+		@extend %bgc-primary;
+		@extend %color-white;
+		padding: 5px;
+		text-align: center;
+	}
+
+	thead {
+		
+		tr {
+			border-width: 1px;
+			border-style: solid;
+			@extend %border-default;
+		}
+
+		th {
+			font-size: 90%;
+			font-weight: bold;
+			padding: 5px;
+			text-transform: uppercase;
+			text-align: center;
+			@extend %color-text;
+			@extend %bgc-offset;
+		}
+	} // thead
+
+	tbody td {
+		position: relative;
+		padding: 8px 5px;
+		text-align: center;
+		border-width: 1px;
+		border-style: solid;
+		@extend %border-default;
+		@extend %bgc-white;
+		@extend %color-text;
+		&.pad {
+			opacity: 0.7;
+		}
+
+		&#today {
+			font-weight: 600;
+
+			&#today:after {
+				content: '';
+				position: absolute;
+				top: 0;
+				right: 0;
+				width: 0;
+				height: 0;
+				border-top: 5px solid lighten($cx-text-color, 55%);
+				border-left: 5px solid transparent;
+			}
+		}
+
+		a {
+			display: block;
+			@extend %color-white;
+			@extend %bgc-primary;
+
+			&:hover {
+				@extend %bgc-secondary;
+				@extend %color-white;
+			}
+		}
+	} // tbody td
+
+	tfoot tr {
+		@extend %bgc-offset;
+		border: 1px solid $cx-border-color;
+
+		td {
+			border: 0;
+			padding: 0;
+		}
+
+		a {
+			display: block;
+			padding: 0.25rem 0.75rem;
+			@extend %color-primary;
+			&:hover {
+				@extend %color-secondary;
+				@extend %bgc-white;
+			}
+		}
+
+		#prev {
+			text-align: left;
+		}
+		#next {
+			text-align: right;
+		}
+	} // tfoot tr
+} // #wp-calendar
+
+
+// footer widgets
+
+.footer-widget {
+	padding-top: $cx-col-spacing;
+	padding-bottom: $cx-col-spacing;
+	@include respond-to(mobile) {
+		padding-top: $cx-col-spacing-mob;
+		padding-bottom: $cx-col-spacing-mob;
+	}
+	border-bottom-width: 1px;
+	border-bottom-style: dashed;
+	@extend %border-default;
+	li {
+		a {
+			@extend %color-white;
+		}
+	}
+	
+	.tagcloud {
+		a {
+			@extend %color-white;
+		}
+	}
+
+	> ul {
+		padding-left: 0;
+	}
+
+	ul {
+		@extend %mb0;
+	}
+
+	 ul.children {
+	 	padding-top: 8px;
+	 }
+
+	 input[type="submit"] {
+	 	@extend %bgc-secondary;
+	 	@extend %border-secondary;
+	 	outline: none;
+	 	box-shadow: none;
+	 }
+
+	select {
+		width:100%;
+		@extend %mb0;
+	}
+
+	&:first-child {
+		padding-top: 0;
+	}
+
+	&:last-child {
+		padding-bottom: 0;
+		border-bottom:0;
+	}
+
+}

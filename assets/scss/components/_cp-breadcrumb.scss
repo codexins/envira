@@ -1,0 +1,22 @@
+/**
+ * Components Breadcrumb
+ *
+ */
+.breadcrumb {
+	background: transparent;
+	padding: 0;
+	margin-bottom: 0;
+	margin-top: 8px;
+	@extend %color-white;
+
+	.fa {
+		font-size: $cx-body-font-size;
+		line-height: $cx-body-line-height;
+		margin-right: 10px;
+	}
+
+	a {
+		margin-right: 10px;
+	}
+}
+

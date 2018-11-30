@@ -53,7 +53,7 @@ defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directl
 	</div> <!-- end of mobile-menu -->
 
 	<!-- Start of Whole Site Wrapper with mobile menu support -->
-	<div id="o-wrapper" class="o-wrapper">
+	<div id="o-wrapper" class="o-wrapper site-content">
 
 		<?php $header_bg_image = ( ! empty( get_header_image() ) ) ? 'background:url(' . esc_url( get_header_image() ) . ')' : '' ?>
 

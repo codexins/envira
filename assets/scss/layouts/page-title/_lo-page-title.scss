@@ -1,0 +1,84 @@
+/**
+ * layout page-title/page title
+ *
+ */
+
+.page-title {
+	padding-top:$cx-section-spacing;
+	padding-bottom:$cx-section-spacing;
+	background-color: lighten($cx-tertiary-color, 20%);
+	@include respond-to(mobile) {
+		padding-top: $cx-section-spacing-mob;
+		padding-bottom: .7*$cx-section-spacing-mob;
+		margin-bottom: $cx-section-spacing-mob;
+	}
+	@extend %overlay;
+	@extend %clearfix;
+	
+	h1 {
+		margin-bottom: 0;
+		color: lighten($cx-text-color, 100%);
+		@include respond-to(mobile) {
+			font-size: 28px;
+		}
+	}
+
+	.breadcrumb > .active {
+		color: lighten($cx-text-color, 100%);
+	}
+
+	.breadcrumb li a {
+		color: lighten($cx-text-color, 100%);	
+	}
+
+	&.centered {
+		text-align: center;
+		.breadcrumb {
+			li {
+				&:first-child {
+					padding-left: 19.5px;
+				}
+			}
+		}
+	}
+
+	&.service-page-title {
+		@include cx-background("../img/service/service-title-bg.jpg");
+		margin-bottom: 0;
+	}
+
+	&.about-page-title {
+		@include cx-background("../img/page-titles/contact-bg-1.jpg");
+	}
+
+	&.portfolio-page-title {
+		@include cx-background("../img/page-titles/portfolio.jpg");
+	}
+
+	&.faq-page-title {
+		@include cx-background("../img/page-titles/faq.jpg");
+	}
+
+	&.blog-page-title {
+		@include cx-background("../img/page-titles/blog.jpg");
+	}
+
+	&.single-page-title {
+		@include cx-background("../img/page-titles/single-post.jpg");
+	}
+
+	&.single-portfolio-page-title {
+		@include cx-background("../img/page-titles/single-portfolio.jpg");
+	}
+
+	&.contact-page-title-01 {
+		@include cx-background("../img/page-titles/contact-bg-1.jpg");
+		margin-bottom: 0;
+	}
+
+	&.contact-page-title-02 {
+		@include cx-background("../img/page-titles/contact-bg-2.jpg");
+		margin-bottom: 0;
+	}
+
+}

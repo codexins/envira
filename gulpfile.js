@@ -132,7 +132,7 @@ gulp.task('styles', () => {
         .on('error', sass.logError)
         .pipe(autoprefixer(config.BROWSERS_LIST))
         .pipe(lineec()) // Consistent Line Endings for non UNIX systems.
-        .pipe(mmq({ log: true })) // Merge Media Queries
+        //.pipe(mmq({ log: true })) // Merge Media Queries
         .pipe(beautify()) // Beautify output CSS
         .pipe(sourcemaps.write({ includeContent: false }))
         .pipe(sourcemaps.init({ loadMaps: true }))

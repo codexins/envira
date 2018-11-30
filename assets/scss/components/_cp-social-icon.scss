@@ -13,7 +13,7 @@
 	    text-align: center;
 	    margin-right:5px;
 	    background-color:darken($cx-body-bg-color, 10%);
-	    color: $cx-text-color ;
+	    color: $cx-text-color;
 	    float: left;
 	    @extend %cx-transition ;
 	    &:hover{

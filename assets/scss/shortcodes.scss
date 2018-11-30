@@ -9,7 +9,7 @@ to a reusable shortcodes.
 INDEX:
 
 	s00 - Shortcode - Common Helpers
-	s01 - Shortcode - Section Title
+	s01 - Shortcode - Address
 
 
 	s50 - Shortcode - Responsive CSS
@@ -25,8 +25,17 @@ INDEX:
 /**************************************
 s00 - Shortcode - Common Helpers
 **************************************/
-// Placeholders
+/**
+ * Placeholders
+ *
+ */
 @import 'base/placeholder';
+
+/**
+ * Colors
+ *
+ */
+@import 'base/colors-shortcodes';
 
 // Shortcodes Styles
 @import "shortcodes/__shortcodes-dir";

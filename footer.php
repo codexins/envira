@@ -22,19 +22,19 @@ $to_top 		= codexin_get_option( 'cx_enable_totop' );
 ?>
 		<!-- Start of Footer -->
 		<footer id="colophon">
-			<div class="footer-widgets-area">
+			<div class="footer-top footer-widgets-area">
 				<div class="container">
 					<div class="row">
-						<div id="footer_col_1" class="col-12 col-sm-12 col-md-6 col-lg-3">
+						<div id="footer_col_1" class="col-12 col-sm-12 col-md-6 col-lg-3 footer-widget-wrapper">
 							<?php ( is_active_sidebar('codexin-footer-col-1') ) ? dynamic_sidebar('codexin-footer-col-1') : ''; ?>
 						</div>
-						<div id="footer_col_2" class="col-12 col-sm-12 col-md-6 col-lg-3">
+						<div id="footer_col_2" class="col-12 col-sm-12 col-md-6 col-lg-3 footer-widget-wrapper">
 							<?php ( is_active_sidebar('codexin-footer-col-2') ) ? dynamic_sidebar('codexin-footer-col-2') : ''; ?>
 						</div>
-						<div id="footer_col_3" class="col-12 col-sm-12 col-md-6 col-lg-3">
+						<div id="footer_col_3" class="col-12 col-sm-12 col-md-6 col-lg-3 footer-widget-wrapper">
 							<?php ( is_active_sidebar('codexin-footer-col-3') ) ? dynamic_sidebar('codexin-footer-col-3') : ''; ?>
 						</div>
-						<div id="footer_col_4" class="col-12 col-sm-12 col-md-6 col-lg-3">
+						<div id="footer_col_4" class="col-12 col-sm-12 col-md-6 col-lg-3 footer-widget-wrapper">
 							<?php ( is_active_sidebar('codexin-footer-col-4') ) ? dynamic_sidebar('codexin-footer-col-4') : ''; ?>
 						</div>
 					</div>
@@ -42,10 +42,10 @@ $to_top 		= codexin_get_option( 'cx_enable_totop' );
 			</div> <!-- end of footer-widgets-area -->
 
 			<?php if( $codexin_cpr ) { ?>
-				<div class="footer-copyright">
+				<div class="copyright-section">
 					<div class="container">
 						<div class="row">
-							<div class="col-xs-12">
+							<div class="col-12">
 								<p class="copyright-legal">
 									<?php echo html_entity_decode( $copyright_text ); ?>
 								</p>

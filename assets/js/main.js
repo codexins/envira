@@ -36,7 +36,7 @@ INDEX:
       $elCarousel = $(".element-carousel"),
       $testimonial = $(".testimonial-container"),
       $toTop = $("#to_top"),
-      $intelHeader = $(".header-area"),
+      $intelHeader = $(".intelligent-header"),
       $footer = $("#colophon"); // Check if element exists
 
   $.fn.elExists = function () {
@@ -124,6 +124,15 @@ INDEX:
   *************************************************************/
 
   /************************************************************
+      s08 - Intelligent Header Space
+  *************************************************************/
+
+
+  CODEXIN.headerPlaceholder = function () {
+    var intHeight = $intelHeader.outerHeight();
+    $(".intelligent-header-space").height(intHeight);
+  };
+  /************************************************************
       s09 - Headroom Js for Auto Hide the header on scroll
   *************************************************************/
 
@@ -151,6 +160,8 @@ INDEX:
 
   CODEXIN.ElementsSpacingClasses = function () {
     $('.sidebar-widget p:empty').remove();
+    $(".tagcloud").find("a").removeAttr('style');
+    $('.rwmb-oembed-not-available').closest('.cx-fluid-wrapper').remove();
   };
   /************************************************************
       s06 - Elements Carousel
@@ -339,9 +350,10 @@ INDEX:
 
   $document.on('ready', function () {
     CODEXIN.mainNav(), CODEXIN.mobileNav(), CODEXIN.elementsCarousel(), CODEXIN.testimonialCarousel(), CODEXIN.scrollToTop(), CODEXIN.headerAutoHide(), CODEXIN.toolTips();
+    CODEXIN.ElementsSpacingClasses();
   }); // Window load and resize functions
 
   $window.on('load resize', function () {
-    CODEXIN.ElementsSpacingClasses();
+    CODEXIN.headerPlaceholder();
   });
 })(jQuery);
