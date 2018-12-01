@@ -1,0 +1,53 @@
+/**
+ * Components Post Format Link
+ *
+ */
+
+ .post-link {
+	span {
+		padding-left: 49px;
+		display: inline-block;
+		font-size: 22px;
+		line-height: 36px;
+	}
+ 	i { 
+		position: absolute;
+ 		display: inline-block;
+ 		left:30px;
+ 		top:0;
+ 		right:auto;
+ 		bottom:0;
+ 		margin:auto;
+ 		@include box(36px, 36px);
+ 		@extend .circle;
+ 		@extend %bgc-primary;
+ 		@extend %color-white;
+ 		@extend %cx-transition;
+		&:hover,
+		&:focus {
+			@extend %bgc-secondary;
+		}
+
+		
+ 	}
+
+ 	.post-format-link {
+ 		position: relative;
+	 	padding: 30px;
+	 	margin-bottom: $cx-heading-margin-bottom;
+	 	@extend %bgc-offset;
+	 	a {
+	 		width:100%;
+	 		height: 100%;
+	 		display: block;
+	 	}
+
+		
+	 	&:hover,
+	 	&:focus {
+	 		i {
+	 			@extend %bgc-secondary;
+	 		}
+	 	}
+ 	}
+ }

@@ -128,4 +128,20 @@
 			}
 		}
 	}
+
+	.caption {
+		display: inline-block;
+		float: left;
+		margin-right: 20px;
+		line-height: 36px;
+		margin-bottom: 10px;
+		span {
+			@include box(36px, 36px)
+			@include border-radius(50%);
+			font-size: 20px;
+			position: relative;
+			top:3px;
+		}
+	}
 }
+

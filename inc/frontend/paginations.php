@@ -34,7 +34,7 @@ if ( ! function_exists( 'codexin_posts_nav' ) ) {
 
         $nav = '';
 
-        $nav .= '<div class="posts-nav clearfix">';
+        $nav .= '<div class="posts-nav posts-nav-page clearfix">';
             if( $next_link ) { 
                 $nav .= '<div class="nav-next alignright">'. $next_link .'</div>';
             }

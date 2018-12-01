@@ -144,14 +144,48 @@
 
 .posts-nav {
 	border-top-width: 1px;
+	border-bottom-width: 1px;
 	border-top-style: solid;
+	border-bottom-style: solid;
+	padding-top: 15px;
+	padding-bottom: 13px;
 	@extend %border-default;
 	@extend %mt-full;
 	.nav-next {
-		margin: 10px 0 0px 15px;
+		margin: 0 15px 0px 0;
 	}
 
 	.nav-previous {
-		margin: 10px 15px 0px 0;	
+		margin: 0 0 0 15px;	
+	}
+
+	a {
+		font-size: 14px;
+    	letter-spacing: 0.05em;
+		text-transform: uppercase;
+		@extend %color-text;
+		&:hover,
+		&:focus {
+			@extend %color-secondary;
+		}
+	}
+
+	&.posts-nav-page {
+		@extend %mt-full;
+		.nav-next {
+			margin: 0 0 0 15px;	
+		}
+
+		.nav-previous {
+			margin: 0 15px 0px 0;
+		}
+	}
+}
+
+.post-footer {
+	.post-tag {
+		a {
+			text-decoration: underline;
+		}
 	}
 }

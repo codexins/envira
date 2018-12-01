@@ -285,3 +285,22 @@ section {
 // .rwmb-oembed-not-available {
 // 	display: none;
 // }
+
+blockquote {
+    @extend %bgc-offset;
+    padding: 30px;
+    border-left-width: 2px;
+    border-left-style: solid;
+    @extend %border-primary;
+    margin-bottom: $cx-heading-margin-bottom;
+    p:last-child {
+    	@extend %mb0;
+    }
+}
+
+
+pre {
+	margin-bottom: $cx-heading-margin-bottom;
+	padding:15px;
+	@extend %bgc-offset;
+}

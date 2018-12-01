@@ -16,23 +16,28 @@ $title_length    = codexin_get_option( 'cx_post_title_length' );
 $excerpt_length  = codexin_get_option( 'cx_post_excerpt_length' );
 $read_more       = codexin_get_option( 'cx_enable_readmore' );
 $social_share 	 = codexin_get_option( 'cx_enable_share_link' );
+$quote 			 = codexin_meta( 'codexin_quote_text' );
+$name 			 = codexin_meta( 'codexin_quote_name' );
+$source 		 = codexin_meta( 'codexin_quote_source' );
 
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'post-item' ); ?>>
-	<?php
+	<?php 
 	if ( ! post_password_required() ) {
-		if( has_post_thumbnail() ) { ?>
-			<div class="post-media">
-				<?php 
-				echo ( ! is_single() ) ? '<a href="' . esc_url( get_the_permalink() ) . '">' : '';
-					the_post_thumbnail( 'codexin-fr-rect-two' );
-				echo ( ! is_single() ) ? '</a>' : '';
-				?>
-			</div> <!-- end of post-media -->
-		<?php 
-		}
-	} ?>
+	    if( ! empty( $quote ) ) {
+	        echo '<div class="post-quote">';
+	            echo '<i class="fa fa-quote-left"></i>';
+	            echo '<blockquote>';
+	                echo wp_kses_post( $quote );
+            		echo ( ! empty( $source ) ) ? '<a href="'. esc_url( $source ) .'">' : '';
+	            		echo ( ! empty( $name ) ) ? '<span> - '. esc_html( $name ) .'</span>' : '';
+	            	echo ( ! empty( $source ) ) ? '</a>' : '';
+	            echo '</blockquote>';
+	        echo '</div>';
+	    }
+	} // end of password check condition
+	?>
 
 	<div class="post-content-wrapper">
 		<div class="post-meta-wrapper">	
@@ -103,20 +108,18 @@ $social_share 	 = codexin_get_option( 'cx_enable_share_link' );
 		} else {
 	        if( has_tag() ) { ?>
 	    		<div class="post-tag">
-		 			<?php the_tags(esc_html__('TAGS: &nbsp;', 'envira'),',&nbsp;&nbsp; ',''); ?>
+		 			<?php the_tags('Tags: &nbsp;',' ',''); ?>
 	    		</div>
 	        <?php 
 	    	}
 
 			if( $social_share ) { ?>
-			    <div class="social-icons">            
-			        <div class="caption"><span class="fa fa-share"></span> <?php esc_html_e('Share: ', 'envira'); ?></div>
-					<ul>
-                        <li><a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo esc_url( get_the_permalink() ); ?>" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                        <li><a class="twitter" href="https://twitter.com/home?status=<?php echo esc_url( get_the_permalink() ); ?>" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                        <li><a class="google-plus" href="https://plus.google.com/share?url=<?php echo esc_url( get_the_permalink() ); ?>" target="_blanl"><i class="fa fa-google-plus"></i></a></li>
-                        <li><a class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=<?php echo esc_url( get_the_permalink() ); ?>" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-                    </ul>      
+			    <div class="share socials">            
+			        <div class="caption"><span class="fa fa-share-alt"></span> <?php esc_html_e('Share: ', 'envira'); ?></div>    
+			        <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo esc_url( get_the_permalink() ); ?>"><i class="fa fa-facebook"></i></a>
+			        <a target="_blank" href="https://twitter.com/home?status=<?php echo esc_url( get_the_permalink() ); ?>"><i class="fa fa-twitter"></i></a>
+			        <a target="_blank" href="https://plus.google.com/share?url=<?php echo esc_url( get_the_permalink() ); ?>"><i class="fa fa-google-plus"></i></a>
+			        <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=<?php echo esc_url( get_the_permalink() ); ?>"><i class="fa fa-linkedin"></i></a>        
 			    </div>
 			<?php }
 		}

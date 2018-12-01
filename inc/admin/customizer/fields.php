@@ -145,7 +145,7 @@ Kirki::add_field( $config_id, array(
         'line-height'       => '26px',
         'font-family'       => 'Open Sans',
         'font-weight'       => '400',
-        'text-transform'    => 'uppercase',
+        'text-transform'    => 'initial',
 	),
     'priority'    => 20,
     'choices'     => array(
@@ -174,7 +174,7 @@ Kirki::add_field( $config_id, array(
         'font-size'   		=> '32px',
         'font-family' 		=> 'PT Sans',
         'font-weight' 		=> '700',
-        'text-transform'    => 'uppercase',
+        'text-transform'    => 'initial',
         'line-height'    	=> '1.2'
 	),
     'priority'    => 30,
@@ -204,7 +204,7 @@ Kirki::add_field( $config_id, array(
         'font-size'   		=> '28px',
         'font-family' 		=> 'PT Sans',
         'font-weight' 		=> '700',
-        'text-transform'    => 'uppercase',
+        'text-transform'    => 'initial',
         'line-height'    	=> '1.2'
 	),
     'priority'    => 40,
@@ -234,7 +234,7 @@ Kirki::add_field( $config_id, array(
         'font-size'   		=> '24px',
         'font-family' 		=> 'PT Sans',
         'font-weight' 		=> '700',
-        'text-transform'    => 'uppercase',
+        'text-transform'    => 'initial',
         'line-height'    	=> '1.2'
 	),
     'priority'    => 50,
@@ -264,7 +264,7 @@ Kirki::add_field( $config_id, array(
         'font-size'   		=> '21px',
         'font-family' 		=> 'PT Sans',
         'font-weight' 		=> '700',
-        'text-transform'    => 'uppercase',
+        'text-transform'    => 'initial',
         'line-height'    	=> '1.2'
 	),
     'priority'    => 60,
@@ -294,7 +294,7 @@ Kirki::add_field( $config_id, array(
         'font-size'   		=> '18px',
         'font-family' 		=> 'PT Sans',
         'font-weight' 		=> '700',
-        'text-transform'    => 'uppercase',
+        'text-transform'    => 'initial',
         'line-height'    	=> '1.2'
 	),
     'priority'    => 70,
@@ -324,7 +324,7 @@ Kirki::add_field( $config_id, array(
         'font-size'   		=> '16px',
         'font-family' 		=> 'PT Sans',
         'font-weight' 		=> '700',
-        'text-transform'    => 'uppercase',
+        'text-transform'    => 'initial',
         'line-height'    	=> '1.2'
 	),
     'priority'    => 80,

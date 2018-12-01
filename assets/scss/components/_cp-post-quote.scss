@@ -1,0 +1,32 @@
+/**
+ * Components Post Format Quote
+ *
+ */
+
+ .post-quote {
+ 	position: relative; 	
+ 	 margin-bottom: $cx-heading-margin-bottom;
+	blockquote {
+		padding-left: 90px;
+		display: inline-block;
+		@extend %mb0;
+	}
+ 	i { 
+		position: absolute;
+ 		display: inline-block;
+ 		left:30px;
+ 		top:0;
+ 		right:auto;
+ 		bottom:0;
+ 		margin:auto;
+ 		@include box(36px, 36px);
+ 		@extend .circle;
+ 		@extend %bgc-primary;
+ 		@extend %color-white;
+ 		@extend %cx-transition;
+		&:hover,
+		&:focus {
+			@extend %bgc-secondary;
+		}
+ 	}
+ }
